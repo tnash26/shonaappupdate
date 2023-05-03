@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shona Sentiment App</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Enter your Shona text:</h1>
+        <form action="/result" method="post" class="mt-3">
+            <input type="text" name="text" class="form-control mb-2 mr-sm-2" placeholder="Type your text here">
+            <button type="submit" class="btn btn-primary mb-2">Submit</button>
+        </form>
+       
+        <!-- Add animated banner with sentiment score -->
+        <div class="mt-5">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">Sentiment Score</div>
+                <div class="card-body">
+                    <h5 class="card-title"><span id="score-value">0</span>%</h5>
+                    <div class="progress">
+                        <div id="score-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add jQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmIaTlLyJuCwYXbI1r3j" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <!-- Add custom JavaScript -->
+    <script>
+        // Function to animate the sentiment score
+        function animateScore(score) {
+            var i = 0;
+            var interval = setInterval(function() {
+                // Update the sentiment score value
+                document.getElementById("score-value").innerHTML = i;
+                // Update the progress bar width
+                document.getElementById("score-bar").style.width = i + "%";
+                // Increment the score value
+                i++;
+                // Stop the interval when the score value is reached
+                if (i > score) {
+                    clearInterval(interval);
+                }
+            }, 10);
+        }
