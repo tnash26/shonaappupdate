@@ -1,7 +1,7 @@
 import pandas as pd
 import re
-from shona_sentiment_neg_5 import shona_sentiment_neg_5
-from shona_sentiment_pos_5 import shona_sentiment_pos_5
+from ShonaSentimentApp import shona_sentiment_neg_5
+from ShonaSentimentApp import shona_sentiment_pos_5
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split

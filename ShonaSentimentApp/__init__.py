@@ -216,10 +216,10 @@ import os
 import pandas as pd
 
 # set the current working directory to the project root
-os.chdir(r'C:\Users\TinasheMunyanyiwa\Videos\HIT400\FlaskApp\shonapp2-main')
+os.chdir(r'./myenv')
 
 # read the CSV file
-shona_to_english_df = pd.read_csv('C:/Users/TinasheMunyanyiwa/Videos/HIT400/FlaskApp/shonapp2-main/shonapp2-main/ShonaSentimentApp/ShonaToEnglishTranslation.csv', encoding='utf-8')
+shona_to_english_df = pd.read_csv('../ShonaSentimentApp/ShonaToEnglishTranslation.csv', encoding='utf-8')
 
 
 
@@ -231,10 +231,10 @@ shona_to_english_df = shona_to_english_df[shona_to_english_df['part_of_speech_ta
 print(shona_to_english_df.head())
 
 # Load JSON files into dictionaries
-with open('C:/Users/TinasheMunyanyiwa/Videos/HIT400/FlaskApp/shonapp2-main/shonapp2-main/ShonaSentimentApp/shona_sentiment_pos_5.json', 'r') as f:
+with open('../ShonaSentimentApp/shona_sentiment_pos_5.json', 'r') as f:
     shona_sentiment_pos_dict = json.load(f)
 
-with open('C:/Users/TinasheMunyanyiwa/Videos/HIT400/FlaskApp/shonapp2-main/shonapp2-main/ShonaSentimentApp/shona_sentiment_neg_5.json', 'r') as f:
+with open('../ShonaSentimentApp/shona_sentiment_neg_5.json', 'r') as f:
     shona_sentiment_neg_dict = json.load(f)
 
 # Print the dictionaries
@@ -244,7 +244,7 @@ print(shona_sentiment_neg_dict)
 # Load English sentiment scores into a dictionary
 english_sentiment_scores = {}
 
-with open('C:/Users/TinasheMunyanyiwa/Videos/HIT400/FlaskApp/shonapp2-main/shonapp2-main/ShonaSentimentApp/englishSentimentDictionary.txt', 'r') as f:
+with open('../ShonaSentimentApp/englishSentimentDictionary.txt', 'r') as f:
     for line in f:
         word, score = line.strip().split('\t')
         english_sentiment_scores[word] = int(score)

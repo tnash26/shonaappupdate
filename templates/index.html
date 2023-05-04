@@ -27,7 +27,7 @@
             {% endif %}
             {% if sentiment_score < 0 %}
                 <div class="mt-5">
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
                         <div class="card-header">Negative</div>
                         <div class="card-body">
                             <h5 class="card-title"><span id="score-value">Negative</span></h5> 
@@ -45,8 +45,25 @@
                     </div>
                 </div>
             {% endif %}
-
-       
+        {% else %}
+        <div class="mt-5">
+            <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                <div class="card-header">Neutral</div>
+                <div class="card-body">
+                    <h5 class="card-title"><span id="score-value">Neutral</span></h5> 
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if english_sentiment %}
+        <div class="mt-5">
+            <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{english_sentiment}}</div>
+                <div class="card-body">
+                    <h5 class="card-title"><span id="score-value">Positive</span></h5> 
+                </div>
+            </div>
+        </div>
         {% endif %}
     </div>
 

@@ -22,12 +22,12 @@ def remove_stop_words(text):
         return clean_text
 
 # Load Shona to English translation data
-translation_data = pd.read_csv('C:/Users/TinasheMunyanyiwa/Videos/HIT400/Project/shonapp2-main/shonapp2-main/ShonaSentimentApp/ShonaToEnglishTranslation.csv')
+translation_data = pd.read_csv('../ShonaSentimentApp/ShonaToEnglishTranslation.csv')
 
 
 # Load English Sentiment Dictionary from file
 english_sentiments = {}
-with open('C:/Users/TinasheMunyanyiwa/Videos/HIT400/Project/shonapp2-main/shonapp2-main/ShonaSentimentApp/EnglishSentimentDictionary.txt', 'r') as f:
+with open('../ShonaSentimentApp/EnglishSentimentDictionary.txt', 'r') as f:
     for line in f:
         word, sentiment = line.strip().split('\t')
         english_sentiments[word] = int(sentiment)
